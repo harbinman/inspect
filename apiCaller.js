@@ -1,7 +1,12 @@
 const axios = require('axios');
 require('dotenv').config();
 async function callAPI(ipList) {
-    if (ipList.length === 0) {
+
+    // 过滤掉空字符串
+    let filteredList = ipList.filter(ip => ip.trim() !== '');
+
+    if (filteredList.length === 0) {
+
         console.log('所有 IP 都可达，无需调用接口。');
         return;
     }

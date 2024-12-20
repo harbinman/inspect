@@ -11,7 +11,6 @@ async function pingIPs() {
             unreachableIPs.push(ip); // 如果不可达，加入结果列表
         }
     }
-
     return unreachableIPs;
 }
 
