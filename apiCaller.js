@@ -8,7 +8,7 @@ async function callAPI(ipList) {
 
     const url = process.env.API_URL; // 注意 URL 添加了 `http://`
     const data = JSON.stringify({
-        mobile: 15951921403, // 测试手机号，可替换为实际需要发送的号码
+        mobile: process.env.PHONE_NUMBER.split(','), // 测试手机号，可替换为实际需要发送的号码
         content: `服务器${ipList.join(', ')}已无法访问,请及时处理！`, // 动态内容
         systemName: '统一服务系统',
         type: 1,
